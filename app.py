@@ -8,9 +8,10 @@ if 'history' not in st.session_state: st.session_state.history=[]
 
 st.markdown('''<style>
 html,body,[class*="css"],.stApp{font-family:"Times New Roman",Times,serif!important}.stApp{background:radial-gradient(circle at 90% 5%,rgba(201,154,59,.17),transparent 24%),radial-gradient(circle at 7% 55%,rgba(53,106,76,.13),transparent 25%),linear-gradient(135deg,#f8f1e5,#fffaf3,#eee1cc);color:#241f1b}#MainMenu,footer,header{visibility:hidden}section[data-testid="stSidebar"]{background:linear-gradient(#1f3d2d,#356a4c,#244836)}section[data-testid="stSidebar"] *{color:#fff9ee!important;font-family:"Times New Roman",Times,serif!important}.hero,.card,.verdict{background:rgba(255,252,246,.94);border:1px solid rgba(78,59,38,.14);border-radius:22px;box-shadow:0 10px 28px rgba(70,50,30,.07)}.hero{padding:38px;margin-bottom:24px;background:linear-gradient(115deg,#fffaf2,#f0dfc3)}.title{font-size:36px;font-weight:bold}.title span{color:#b65720}.desc{font-size:17px;color:#6d6257;margin-bottom:20px}.card{padding:20px}.feature{min-height:185px;text-align:center}.signal{background:#fffaf2;border-left:5px solid #a83e35;padding:13px 16px;margin:9px 0;border-radius:0 12px 12px 0;color:#5f5449}.action{background:#edf4ec;border-left:5px solid #356a4c;padding:12px 16px;margin:9px 0;border-radius:0 12px 12px 0;color:#43584a}.metric{border-top:5px solid #d97718}.metric.green{border-top-color:#356a4c}.metric.gold{border-top-color:#c69a3b}.metric.red{border-top-color:#a83e35}.metric h2{margin:7px 0}.verdict{text-align:center;padding:24px}.stButton button,.stFormSubmitButton button{width:100%;background:linear-gradient(135deg,#244836,#356a4c)!important;color:white!important;border:none!important;border-radius:11px!important;font-family:"Times New Roman",Times,serif!important;font-size:18px!important;font-weight:bold!important;padding:11px!important}</style>''',unsafe_allow_html=True)
-
+import os
 with st.sidebar:
- if __import__('os').path.exists('assets/government-logo.png'): st.image('assets/government-logo.png',width=85)
+if os.path.exists("government-logo.png"):
+    st.image("government-logo.png", width=85)
  st.markdown('## 🛡️ ScamShield AI');st.caption('Cyber Fraud Intelligence')
  page=st.radio('NAVIGATION',['🏠 Home','💬 Analyze Message','🔗 Analyze URL','📊 Live Dashboard','🛡️ Safety Centre','ℹ️ About'])
  st.markdown('---');st.markdown('### 🔎 Threats Detected\n• Phishing\n• OTP & Banking Fraud\n• Fake Rewards\n• Investment Scams\n• Suspicious Links\n• Urgency Manipulation')
