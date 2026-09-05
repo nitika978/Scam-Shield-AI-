@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from scam_engine import analyze_message, analyze_url
 
-st.set_page_config(page_title='ScamShield AI',page_icon='🛡️',layout='wide')
+st.set_page_config(page_title='ScamShield AI',page_icon='',layout='wide')
 if 'history' not in st.session_state: st.session_state.history=[]
 
 st.markdown('''<style>
